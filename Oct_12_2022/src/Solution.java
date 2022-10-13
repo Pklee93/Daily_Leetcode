@@ -1,4 +1,6 @@
 /*
+ * Title: KnightProbability
+ *
  * n x n chess board
  * A knight starts at cell (row, column)
  * Attempt to make exactly k moves.
