@@ -8,20 +8,15 @@ import java.util.Map;
 
 public class Solution {
 	public int removeDuplicates(int[] nums) {
-		Map<Integer, Integer> map = new HashMap<>();
-		int idx = 0;
-		int length = 0;
-		
-		for (int i = 0; i < nums.length; i++) {
-			if (!map.containsKey(nums[i])) {
-				map.put(nums[i], null);
-				nums[idx] = nums[i];
-				idx++;
-				length++;
-			} 
+		int count = 0;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] == nums[i - 1]) {
+				count++;
+			} else {
+				nums[i - count] = nums[i];
+			}
 		}
-		
-		return length;
+		return nums.length - count;
 	}
 
 }
